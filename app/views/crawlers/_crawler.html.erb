@@ -1,0 +1,12 @@
+<div class="crawler">
+  <%= link_to crawler.keywords, crawler_path(crawler) %>
+  <div class="crawler__actions">
+    <%= button_to "Delete",
+                  crawler_path(crawler),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                  edit_crawler_path(crawler),
+                  class: "btn btn--light" %>
+  </div>
+</div>

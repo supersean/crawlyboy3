@@ -1,0 +1,14 @@
+en:
+  simple_form:
+    placeholders:
+      crawler:
+        keywords: Input your keywords
+      labels:
+        crawler:
+          keywords: Keywords
+
+    helpers:
+      submit:
+        crawler:
+          create: Create crawler
+          update: Update crawler

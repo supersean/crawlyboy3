@@ -1,0 +1,10 @@
+<main class="container">
+  <div class="header">
+    <h1>Crawlers</h1>
+    <%= link_to "New Crawler",
+      new_crawler_path,
+      class: "btn btn--primary" %>
+  </div>
+
+  <%= render @crawlers %>
+</main>

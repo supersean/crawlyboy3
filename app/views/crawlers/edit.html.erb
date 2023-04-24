@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to crawler"), crawler_path(@crawler) %>
+
+  <div class="header">
+    <h1>Edit crawler</h1>
+  </div>
+
+  <%= render "form", crawler: @crawler %>
+</main>
