@@ -8,17 +8,8 @@
 
   <%= f.input :keywords, input_html: { autofocus: true } %>
 
-  <%= f.association :drivers, as: :check_boxes, wrapper: :checkbox, boolean_style: :inline %>
+  <%= f.association :drivers, as: :check_boxes,  wrapper: :checkbox  %>
 
-<!--  <div class="form__group">-->
-<!--    <label class="visually-hidden">Select a Driver:</label>-->
-    <%#= f.select :drivers, options_from_collection_for_select(Driver.all, 'id', 'name', @crawler.drivers.map(&:id)), {prompt: "Select a Driver"}, multiple: true, class: "form__select" %>
-<!--  </div>-->
   <%= f.button :submit, class: "btn btn--secondary" %>
 
 <% end %>
-<div data-controller="hello">
-  <input data-hello-target="name" type="text">
-  <button data-action="click->hello#greet">Greet</button>
-  <span data-hello-target="output"></span>
-</div>

@@ -4,10 +4,12 @@ export default class extends Controller {
 
     static targets = ["box"];
 
-    handleClick() {}
+    handleClick({ target }) {
+        target.parentElement.classList.toggle('checked');
+
+    }
 
     connect() {
-        console.log('checkbox connected');
-        console.log(this.boxTargets, this.boxTarget, this.hasBoxTarget);
+        this.boxTargets.forEach((box) => (box.getAttribute("checked") ? box.parentElement.classList.add("checked") : ""))
     }
 }

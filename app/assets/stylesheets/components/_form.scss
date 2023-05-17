@@ -28,15 +28,37 @@
     border-color: var(--color-primary) !important;
   }
 
+  .checkbox__group {
+    background: var(--color-primary-bg);
+    padding: var(--space-m);
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: var(--space-s);
+    flex-wrap: wrap;
+
+    &__label {
+      flex-basis: 100%;
+    }
+  }
 
   .checkbox {
     position: relative;
-    display: block;
-    background:green;
 
     label {
       position: relative;
-      display: block;
+
+      border-radius: var(--border-radius);
+      display: inline-block;
+      padding: var(--space-s);
+      width: var(--button-width-medium);
+      text-align: center;
+      cursor: pointer;
+
+
+      background: var(--color-primary-faded);
+      &.checked, &:hover {
+        background: var(--color-primary);
+      }
     }
 
     .form__checkbox {
@@ -46,16 +68,14 @@
       right:0;
       bottom:0;
       z-index: 1;
-      //appearance: none;
-      //-webkit-appearance: none;
-      //-moz-appearance: none;
-
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
     }
 
 
     label {
       position: relative;
-      background: blue;
       color: white;
       input {
         // styles reset, including removing the default dropdown arrow
@@ -74,17 +94,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-
-        background: red;
-
-        &:checked {
-          background: yellow;
-        }
       }
     }
-    //
-    display: block;
-    position: relative;
   }
 
   option {

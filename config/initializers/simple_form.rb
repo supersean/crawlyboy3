@@ -10,9 +10,9 @@ SimpleForm.setup do |config|
   config.wrappers :checkbox, :tag => 'div', wrapper_html: {"data-controller" => "checkbox"}, :class => 'checkbox__group', error_class: 'checkbox__group--invalid' do |b|
     b.use :html5
     b.use :placeholder
-    b.use :label, class: "visually-hidden"
+    b.use :label, class: "checkbox__group__label"
     # using stimulus js controller to manage, if you don't set it up they will be normal checkboxes
-    b.use :input, class: "form__checkbox", "data-checkbox-target" => "box", "data-action" => "checkbox#click"
+    b.use :input, class: "form__checkbox", "data-checkbox-target" => "box", "data-action" => "click->checkbox#handleClick"
   end
 
   # Default configuration
