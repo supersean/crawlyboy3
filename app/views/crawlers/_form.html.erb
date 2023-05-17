@@ -1,10 +1,24 @@
-<%= simple_form_for crawler, html: { class: "crawler from" } do |f| %>
+<%= simple_form_for crawler, html: { class: "card form" } do |f| %>
   <% if crawler.errors.any? %>
     <div class="error-message">
       <%= crawler.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
 
+
   <%= f.input :keywords, input_html: { autofocus: true } %>
-  <%= f.submit class: "btn btn--secondary" %>
+
+  <%= f.association :drivers, as: :check_boxes, wrapper: :checkbox, boolean_style: :inline %>
+
+<!--  <div class="form__group">-->
+<!--    <label class="visually-hidden">Select a Driver:</label>-->
+    <%#= f.select :drivers, options_from_collection_for_select(Driver.all, 'id', 'name', @crawler.drivers.map(&:id)), {prompt: "Select a Driver"}, multiple: true, class: "form__select" %>
+<!--  </div>-->
+  <%= f.button :submit, class: "btn btn--secondary" %>
+
 <% end %>
+<div data-controller="hello">
+  <input data-hello-target="name" type="text">
+  <button data-action="click->hello#greet">Greet</button>
+  <span data-hello-target="output"></span>
+</div>

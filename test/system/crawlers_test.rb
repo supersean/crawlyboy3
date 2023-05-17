@@ -13,6 +13,8 @@ class CrawlersTest < ApplicationSystemTestCase
     assert_selector "h1", text: "New crawler"
 
     fill_in "Keywords", with: "Keywords 1"
+    select "Google", from: "crawler_drivers"
+
     click_on "Create Crawler"
 
     assert_selector "h1", text: "Crawlers"

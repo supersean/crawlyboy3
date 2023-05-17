@@ -2,9 +2,16 @@
 
 first:
   keywords: one
+  drivers:
+    - one
 
 second:
   keywords: two
+  drivers:
+    - one
+    - two
 
 third:
   keywords: three
+  drivers:
+    - one

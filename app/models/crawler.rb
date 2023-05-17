@@ -1,3 +1,5 @@
 class Crawler < ApplicationRecord
-  validates :keywords, presence: true
+  validates_presence_of :drivers, :keywords
+
+  has_and_belongs_to_many :drivers
 end

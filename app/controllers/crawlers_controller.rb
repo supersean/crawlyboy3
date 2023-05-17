@@ -2,7 +2,7 @@ class CrawlersController < ApplicationController
   before_action :set_crawler, only: [:show, :edit, :update, :destroy]
 
   def index
-    @crawlers = Crawler.all
+    @crawlers = Crawler.all.order(:keywords)
   end
 
   def show
@@ -13,6 +13,7 @@ class CrawlersController < ApplicationController
   end
 
   def create
+    puts params.inspect
     @crawler = Crawler.new(crawler_params)
 
     if @crawler.save
@@ -46,6 +47,7 @@ class CrawlersController < ApplicationController
   end
 
   def crawler_params
-    params.require(:crawler).permit(:keywords)
+    crawler = params.require(:crawler).permit(:keywords, driver_ids: [] )
+    crawler
   end
 end
