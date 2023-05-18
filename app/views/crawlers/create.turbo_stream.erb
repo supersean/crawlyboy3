@@ -1,0 +1,6 @@
+<%= turbo_stream.replace "crawlers" do %>
+  <%= turbo_frame_tag "crawlers" do %>
+    <%= render Crawler.alphabetical %>
+  <% end %>
+<% end %> %>
+<%= turbo_stream.update Crawler.new, "" %>

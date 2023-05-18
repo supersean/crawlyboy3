@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class CrawlersTest < ApplicationSystemTestCase
   setup do
-    @crawler = crawlers(:first)
+    @crawler = Crawler.alphabetical.first
   end
 
   test "Creating a new crawler" do
@@ -10,11 +10,11 @@ class CrawlersTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Crawlers"
 
     click_on "New Crawler"
-    assert_selector "h1", text: "New crawler"
-
     fill_in "Keywords", with: "Keywords 1"
-    select "Google", from: "crawler_drivers"
 
+    check "Google"
+
+    assert_selector "h1", text: "Crawlers"
     click_on "Create Crawler"
 
     assert_selector "h1", text: "Crawlers"
@@ -33,9 +33,9 @@ class CrawlersTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Crawlers"
 
     click_on "Edit", match: :first
-    assert_selector "h1", text: "Edit crawler"
-
     fill_in "Keywords", with: "Updated crawler"
+
+    assert_selector "h1", text: "Crawlers"
     click_on "Update Crawler"
 
     assert_selector "h1", text: "Crawlers"

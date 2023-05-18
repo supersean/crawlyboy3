@@ -2,7 +2,7 @@ class CrawlersController < ApplicationController
   before_action :set_crawler, only: [:show, :edit, :update, :destroy]
 
   def index
-    @crawlers = Crawler.all.order(:keywords)
+    @crawlers = Crawler.alphabetical
   end
 
   def show
@@ -17,7 +17,11 @@ class CrawlersController < ApplicationController
     @crawler = Crawler.new(crawler_params)
 
     if @crawler.save
-      redirect_to crawlers_path, notice: "Crawler was successfully created"
+      # redirect_to crawlers_path, notice: "Crawler was successfully created"
+      formats do |format|
+        format.html { redirect_to crawlers_path, notice: "Crawler was successfully created" }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +41,10 @@ class CrawlersController < ApplicationController
 
   def destroy
     @crawler.destroy
-    redirect_to crawlers_path, notice: "Crawler was successfully destroyed."
+    formats do |format|
+      format.html { redirect_to crawlers_path, notice: "Crawler was successfully destroyed." }
+      format.turbo_stream
+    end
   end
 
   private
@@ -47,7 +54,7 @@ class CrawlersController < ApplicationController
   end
 
   def crawler_params
-    crawler = params.require(:crawler).permit(:keywords, driver_ids: [] )
+    crawler = params.require(:crawler).permit(:keywords, driver_ids: [])
     crawler
   end
 end

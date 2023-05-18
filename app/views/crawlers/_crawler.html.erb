@@ -1,19 +1,21 @@
-<div class="crawler card">
-  <div>
-    <%= link_to crawler.keywords, crawler_path(crawler) %>
-    <div class="crawler__drivers">
-      <% crawler.drivers.each do |driver| %>
-        <span><%= driver.name %></span>
-      <% end %>
+<%= turbo_frame_tag crawler do %>
+  <div class="crawler card">
+    <div>
+      <%= link_to crawler.keywords, crawler_path(crawler), data: { turbo_frame: "_top" } %>
+      <div class="crawler__drivers">
+        <% crawler.drivers.each do |driver| %>
+          <span><%= driver.name %></span>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="crawler__actions">
-    <%= button_to "Delete",
-                  crawler_path(crawler),
-                  method: :delete,
-                  class: "btn btn--light" %>
-    <%= link_to "Edit",
+    <div class="crawler__actions">
+      <%= button_to "Delete",
+                    crawler_path(crawler),
+                    method: :delete,
+                    class: "btn btn--light" %>
+      <%= link_to "Edit",
                   edit_crawler_path(crawler),
                   class: "btn btn--light" %>
+    </div>
   </div>
-</div>
+<% end %>

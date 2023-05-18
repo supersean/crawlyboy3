@@ -2,9 +2,14 @@
   <div class="header">
     <h1>Crawlers</h1>
     <%= link_to "New Crawler",
-      new_crawler_path,
-      class: "btn btn--primary" %>
+                new_crawler_path,
+                data: { turbo_frame: dom_id(Crawler.new) },
+                class: "btn btn--primary" %>
   </div>
 
-  <%= render @crawlers %>
+  <%= turbo_frame_tag dom_id(Crawler.new) %>
+  <%= turbo_frame_tag "crawlers" do %>
+    <%= render @crawlers %>
+
+  <% end %>
 </main>
