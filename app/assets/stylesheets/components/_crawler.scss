@@ -1,17 +1,26 @@
 .crawler {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   gap: var(--space-s);
 
   @include media(tabletAndUp) {
     padding: var(--space-xs) var(--space-m);
   }
 
+  &__drivers {
+    display: flex;
+    gap: var(--space-s);
+  }
+
   &__actions {
     display: flex;
     flex: 0 0 auto;
-    align-self: flex-start;
     gap: var(--space-xs);
+
+    .btn {
+      height: 100%;
+
+    }
   }
 }

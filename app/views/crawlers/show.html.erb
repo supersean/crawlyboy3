@@ -5,4 +5,11 @@
       <%= @crawler.keywords %>
     </h1>
   </div>
+
+  <h2>Drivers</h2>
+  <ul>
+    <% @crawler.drivers.each do |driver| %>
+      <li><%= driver.name %></li>
+    <% end %>
+  </ul>
 </main>

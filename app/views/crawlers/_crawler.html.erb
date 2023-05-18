@@ -1,5 +1,12 @@
 <div class="crawler card">
-  <%= link_to crawler.keywords, crawler_path(crawler) %>
+  <div>
+    <%= link_to crawler.keywords, crawler_path(crawler) %>
+    <div class="crawler__drivers">
+      <% crawler.drivers.each do |driver| %>
+        <span><%= driver.name %></span>
+      <% end %>
+    </div>
+  </div>
   <div class="crawler__actions">
     <%= button_to "Delete",
                   crawler_path(crawler),
