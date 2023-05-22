@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class CrawlersTest < ApplicationSystemTestCase
   setup do
-    @crawler = Crawler.alphabetical.first
+    @crawler = Crawler.alphabetical_sync.first
   end
 
   test "Creating a new crawler" do

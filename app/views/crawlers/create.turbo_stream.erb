@@ -1,6 +1,6 @@
 <%= turbo_stream.replace "crawlers" do %>
   <%= turbo_frame_tag "crawlers" do %>
-    <%= render Crawler.alphabetical %>
+    <%= render Crawler.alphabetical_sync %>
   <% end %>
-<% end %> %>
+<% end %>
 <%= turbo_stream.update Crawler.new, "" %>

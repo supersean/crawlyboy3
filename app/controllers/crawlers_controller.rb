@@ -2,7 +2,7 @@ class CrawlersController < ApplicationController
   before_action :set_crawler, only: [:show, :edit, :update, :destroy]
 
   def index
-    @crawlers = Crawler.alphabetical
+    @crawlers = Crawler.alphabetical_sync
   end
 
   def show
@@ -20,7 +20,7 @@ class CrawlersController < ApplicationController
       # redirect_to crawlers_path, notice: "Crawler was successfully created"
       formats do |format|
         format.html { redirect_to crawlers_path, notice: "Crawler was successfully created" }
-        format.turbo_stream
+        # format.turbo_stream
       end
     else
       render :new, status: :unprocessable_entity

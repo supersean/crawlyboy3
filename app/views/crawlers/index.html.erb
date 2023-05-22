@@ -1,3 +1,5 @@
+<%= turbo_stream_from "crawlers" %>
+
 <main class="container">
   <div class="header">
     <h1>Crawlers</h1>
@@ -9,7 +11,6 @@
 
   <%= turbo_frame_tag dom_id(Crawler.new) %>
   <%= turbo_frame_tag "crawlers" do %>
-    <%= render @crawlers %>
-
+    <%= render Crawler.alphabetical_sync %>
   <% end %>
 </main>

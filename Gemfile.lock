@@ -206,6 +206,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.8.1)
     regexp_parser (2.8.0)
     reline (0.3.3)
       io-console (~> 0.5)
@@ -283,6 +284,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   rails-controller-testing
   rails_live_reload
+  redis (~> 4.0)
   sass-rails
   selenium-webdriver
   simple_form (~> 5.1.0)
