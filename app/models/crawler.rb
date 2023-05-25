@@ -13,5 +13,4 @@ class Crawler < ApplicationRecord
   # after_create_commit refresh_all_crawlers_async
   # after_update_commit refresh_all_crawlers_async
   # after_destroy_commit refresh_all_crawlers_sync
-
 end

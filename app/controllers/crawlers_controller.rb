@@ -13,7 +13,6 @@ class CrawlersController < ApplicationController
   end
 
   def create
-
     @crawler = current_user.crawlers.build(crawler_params)
 
     if @crawler.save
@@ -28,7 +27,6 @@ class CrawlersController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -54,7 +52,6 @@ class CrawlersController < ApplicationController
   end
 
   def crawler_params
-    crawler = params.require(:crawler).permit(:keywords, driver_ids: [])
-    crawler
+    params.require(:crawler).permit(:keywords, driver_ids: [])
   end
 end
