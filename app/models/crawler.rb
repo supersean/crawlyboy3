@@ -2,6 +2,7 @@ class Crawler < ApplicationRecord
   validates_presence_of :drivers, :keywords
 
   has_and_belongs_to_many :drivers
+  belongs_to :user
 
   scope :alphabetical_sync, -> { order(keywords: :desc) }
   # scope :alphabetical_async, -> { alphabetical_sync.load_async }

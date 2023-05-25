@@ -1,17 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 first:
+  user: sean
   keywords: one
   drivers:
     - one
 
 second:
   keywords: two
+  user: sean
   drivers:
     - one
     - two
 
 third:
+  user: jeff
   keywords: three
   drivers:
     - one
+

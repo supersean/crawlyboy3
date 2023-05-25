@@ -13,8 +13,8 @@ class CrawlersController < ApplicationController
   end
 
   def create
-    puts params.inspect
-    @crawler = Crawler.new(crawler_params)
+
+    @crawler = current_user.crawlers.build(crawler_params)
 
     if @crawler.save
       # redirect_to crawlers_path, notice: "Crawler was successfully created"

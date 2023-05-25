@@ -1,0 +1,10 @@
+<main class="container">
+  <h1>Crawly Boy v3</h1>
+  <p>A website that crawls your terms and gets you results daily</p>
+
+  <% if user_signed_in? %>
+    <%= link_to "View Crawlers", crawlers_path, class: "btn btn--dark" %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "btn btn--dark" %>
+  <% end %>
+</main>
