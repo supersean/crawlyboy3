@@ -329,7 +329,6 @@ DEPENDENCIES
   rails-controller-testing
   rails_live_reload
   redis (~> 4.0)
-  rubocop
   sass-rails
   selenium-webdriver
   simple_form (~> 5.1.0)
