@@ -11,6 +11,7 @@
 
   <%= turbo_frame_tag dom_id(Crawler.new) %>
   <%= turbo_frame_tag "crawlers" do %>
+    <%= render "crawlers/empty_state" %>
     <%= render Crawler.alphabetical_sync %>
   <% end %>
 </main>

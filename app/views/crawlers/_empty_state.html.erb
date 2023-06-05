@@ -1,0 +1,7 @@
+<div class="empty-state empty-state--only-child">
+  <p class="empty-state__text">
+    You don't have any crawlers yet!
+  </p>
+
+  <%= link_to "Add crawler", new_crawler_path, class: "btn btn--primary", data: { turbo_frame: dom_id(Crawler.new) } %>
+</div>
